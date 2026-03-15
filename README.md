@@ -20,15 +20,15 @@
 <table>
   <tr>
     <td align="center">
-      <img src="https://officialsammy2701.github.io/bibleflash/screenshots/mobile-verse.png" width="220" alt="Bible Verse Card"/>
+      <img src="https://officialsammy2701.github.io/bibleflash/screenshots/mobile-verse.png" width="240" alt="Bible Verse Card"/>
       <br/><sub>Bible Verse Card</sub>
     </td>
     <td align="center">
-      <img src="https://officialsammy2701.github.io/bibleflash/screenshots/mobile-quote.png" width="220" alt="Daily Quote Card"/>
+      <img src="https://officialsammy2701.github.io/bibleflash/screenshots/mobile-quote.png" width="240" alt="Daily Quote Card"/>
       <br/><sub>Daily Quote Card</sub>
     </td>
     <td align="center">
-      <img src="https://officialsammy2701.github.io/bibleflash/screenshots/mobile-reflection.png" width="220" alt="Reflection Card"/>
+      <img src="https://officialsammy2701.github.io/bibleflash/screenshots/mobile-reflection.png" width="240" alt="Reflection Card"/>
       <br/><sub>Reflection Card</sub>
     </td>
   </tr>
