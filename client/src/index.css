@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -5,13 +7,14 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e1b4b 100%);
+  font-family: 'DM Sans', sans-serif;
+  background: #050d1a;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
+  overflow-x: hidden;
 }
 
 #root {

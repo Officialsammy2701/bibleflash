@@ -1,29 +1,34 @@
-.notif-toggle {
-  margin-top: 8px;
+.notif-wrap {
+  position: relative;
+  z-index: 2;
+  margin-top: 4px;
 }
 
 .notif-btn {
-  padding: 10px 24px;
-  border-radius: 24px;
-  border: 1px solid rgba(255,255,255,0.3);
-  background: rgba(255,255,255,0.08);
-  color: rgba(255,255,255,0.8);
+  padding: 10px 28px;
+  border-radius: 50px;
+  border: 1px solid rgba(180, 210, 255, 0.14);
+  background: transparent;
+  color: rgba(180, 210, 230, 0.45);
   cursor: pointer;
-  font-size: 14px;
+  font-size: 13px;
+  font-family: 'DM Sans', sans-serif;
   transition: all 0.2s;
+  letter-spacing: 0.3px;
 }
 
 .notif-btn:hover:not(:disabled) {
-  background: rgba(255,255,255,0.15);
+  border-color: rgba(180, 210, 255, 0.32);
+  color: rgba(200, 225, 255, 0.75);
 }
 
 .notif-btn.active {
-  background: rgba(99,102,241,0.4);
-  border-color: #818cf8;
-  color: #fff;
+  border-color: rgba(130, 170, 240, 0.3);
+  color: rgba(180, 210, 255, 0.7);
+  background: rgba(100, 140, 220, 0.1);
 }
 
 .notif-btn:disabled {
-  opacity: 0.5;
+  opacity: 0.4;
   cursor: not-allowed;
 }

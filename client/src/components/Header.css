@@ -1,16 +1,32 @@
 .header {
   text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
 .header-title {
-  font-size: 28px;
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
   font-weight: 700;
-  color: #fff;
-  letter-spacing: 2px;
+  background: linear-gradient(135deg, #fff 0%, #c8d8f0 50%, #8aaee0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 1px;
+}
+
+.header-star {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 20px;
+  -webkit-text-fill-color: #c8d8f0;
 }
 
 .header-date {
-  font-size: 14px;
-  color: rgba(255,255,255,0.5);
-  margin-top: 4px;
+  font-size: 11px;
+  color: rgba(180, 200, 230, 0.45);
+  margin-top: 6px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }

@@ -17,18 +17,15 @@ function NotificationToggle() {
       const reg = await navigator.serviceWorker.ready;
       const keyRes = await fetch('https://bibleflash-api.onrender.com/api/push/vapidPublicKey');
       const { key } = await keyRes.json();
-
       const sub = await reg.pushManager.subscribe({
         userVisibleOnly: true,
         applicationServerKey: key
       });
-
       await fetch('https://bibleflash-api.onrender.com/api/push/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(sub)
       });
-
       setStatus('granted');
     } catch (err) {
       console.error('Subscription failed:', err);
@@ -62,14 +59,14 @@ function NotificationToggle() {
   if (!('Notification' in window)) return null;
 
   return (
-    <div className="notif-toggle">
+    <div className="notif-wrap">
       {status === 'granted' ? (
         <button className="notif-btn active" onClick={unsubscribe} disabled={loading}>
-          🔔 {loading ? 'Updating...' : 'Notifications On'}
+          🔔 {loading ? 'Updating...' : 'Notifications on'}
         </button>
       ) : (
         <button className="notif-btn" onClick={subscribe} disabled={loading || status === 'denied'}>
-          🔕 {loading ? 'Enabling...' : status === 'denied' ? 'Notifications Blocked' : 'Enable Notifications'}
+          🔕 {loading ? 'Enabling...' : status === 'denied' ? 'Notifications blocked' : 'Enable notifications'}
         </button>
       )}
     </div>

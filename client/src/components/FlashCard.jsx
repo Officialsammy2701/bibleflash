@@ -22,6 +22,12 @@ function FlashCard({ verse, quote, affirmation, loading, onRefresh }) {
     setIndex(i => (i - 1 + CARDS.length) % CARDS.length);
   };
 
+  const goTo = (i) => {
+    setDirection(i > index ? 1 : -1);
+    setFlipped(false);
+    setIndex(i);
+  };
+
   const handlers = useSwipeable({
     onSwipedLeft: goNext,
     onSwipedRight: goPrev,
@@ -30,13 +36,17 @@ function FlashCard({ verse, quote, affirmation, loading, onRefresh }) {
   });
 
   const variants = {
-    enter: (d) => ({ x: d > 0 ? 300 : -300, opacity: 0 }),
-    center: { x: 0, opacity: 1 },
-    exit: (d) => ({ x: d > 0 ? -300 : 300, opacity: 0 })
+    enter: (d) => ({ x: d > 0 ? 260 : -260, opacity: 0, scale: 0.96 }),
+    center: { x: 0, opacity: 1, scale: 1 },
+    exit: (d) => ({ x: d > 0 ? -260 : 260, opacity: 0, scale: 0.96 })
   };
 
   const renderFront = () => {
-    if (loading) return <div className="card-loading"><div className="spinner" /></div>;
+    if (loading) return (
+      <div className="card-loading">
+        <div className="spinner" />
+      </div>
+    );
     const type = CARDS[index];
     if (type === 'verse') return (
       <>
@@ -71,14 +81,18 @@ function FlashCard({ verse, quote, affirmation, loading, onRefresh }) {
           initial="enter"
           animate="center"
           exit="exit"
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.35, ease: [0.34, 1.56, 0.64, 1] }}
           onClick={() => setFlipped(f => !f)}
         >
           <div className="card-inner">
-            <div className="card-front">{renderFront()}</div>
+            <div className="card-front">
+              <div className="card-glow-top" />
+              {renderFront()}
+            </div>
             <div className="card-back">
+              <div className="card-glow-top" />
               <span className="card-label">🙏 Reflection</span>
-              <p className="card-text">Take a moment to meditate on this. Let it guide your day.</p>
+              <p className="card-text">Take a moment to meditate on this. Let it guide your day with peace and purpose.</p>
             </div>
           </div>
         </motion.div>
@@ -86,17 +100,21 @@ function FlashCard({ verse, quote, affirmation, loading, onRefresh }) {
 
       <div className="card-dots">
         {CARDS.map((_, i) => (
-          <span key={i} className={`dot ${i === index ? 'active' : ''}`} onClick={() => { setDirection(i > index ? 1 : -1); setIndex(i); }} />
+          <span
+            key={i}
+            className={`dot ${i === index ? 'active' : ''}`}
+            onClick={() => goTo(i)}
+          />
         ))}
       </div>
 
       <div className="card-controls">
         <button className="ctrl-btn" onClick={goPrev}>← Prev</button>
-        <button className="ctrl-btn refresh" onClick={onRefresh}>↻ New</button>
+        <button className="ctrl-btn refresh-btn" onClick={onRefresh}>↻ New</button>
         <button className="ctrl-btn" onClick={goNext}>Next →</button>
       </div>
 
-      <p className="swipe-hint">Swipe or tap card to flip</p>
+      <p className="swipe-hint">tap card to flip · swipe to navigate</p>
     </div>
   );
 }
