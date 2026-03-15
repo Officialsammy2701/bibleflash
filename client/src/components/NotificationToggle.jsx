@@ -15,7 +15,7 @@ function NotificationToggle() {
     setLoading(true);
     try {
       const reg = await navigator.serviceWorker.ready;
-      const keyRes = await fetch('/api/push/vapidPublicKey');
+      const keyRes = await fetch('https://bibleflash-api.onrender.com/api/push/vapidPublicKey');
       const { key } = await keyRes.json();
 
       const sub = await reg.pushManager.subscribe({
@@ -23,7 +23,7 @@ function NotificationToggle() {
         applicationServerKey: key
       });
 
-      await fetch('/api/push/subscribe', {
+      await fetch('https://bibleflash-api.onrender.com/api/push/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(sub)
@@ -44,7 +44,7 @@ function NotificationToggle() {
       const reg = await navigator.serviceWorker.ready;
       const sub = await reg.pushManager.getSubscription();
       if (sub) {
-        await fetch('/api/push/unsubscribe', {
+        await fetch('https://bibleflash-api.onrender.com/api/push/unsubscribe', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ endpoint: sub.endpoint })

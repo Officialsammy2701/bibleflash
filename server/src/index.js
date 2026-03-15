@@ -10,7 +10,9 @@ import { startCron } from './services/cron.js';
 dotenv.config();
 
 const app = express();
-app.use(cors({ origin: 'http://localhost:5173' }));
+app.use(cors({ 
+  origin: ['http://localhost:5173', 'https://officialsammy2701.github.io'] 
+}));
 app.use(express.json());
 
 app.get('/', (req, res) => res.send('BibleFlash API is running!'));
