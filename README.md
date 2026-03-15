@@ -14,11 +14,21 @@
 ## 📸 Screenshots
 
 ### Desktop
-![BibleFlash Desktop — Bible Verse Card](https://officialsammy2701.github.io/bibleflash/screenshots/desktop.png)
+![BibleFlash Desktop](https://officialsammy2701.github.io/bibleflash/screenshots/desktop.png)
 
 ### Mobile
-![BibleFlash Mobile — Quote Card](https://officialsammy2701.github.io/bibleflash/screenshots/mobile-verse.png)
-![BibleFlash Mobile — Daily Quote](https://officialsammy2701.github.io/bibleflash/screenshots/mobile-quote.png)
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://officialsammy2701.github.io/bibleflash/screenshots/mobile-verse.png" width="280" alt="Bible Verse Card"/>
+      <br/><sub>Bible Verse Card</sub>
+    </td>
+    <td align="center">
+      <img src="https://officialsammy2701.github.io/bibleflash/screenshots/mobile-quote.png" width="280" alt="Daily Quote Card"/>
+      <br/><sub>Daily Quote Card</sub>
+    </td>
+  </tr>
+</table>
 
 ---
 
