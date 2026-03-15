@@ -27,6 +27,10 @@
       <img src="https://officialsammy2701.github.io/bibleflash/screenshots/mobile-quote.png" width="280" alt="Daily Quote Card"/>
       <br/><sub>Daily Quote Card</sub>
     </td>
+    <td align="center">
+      <img src="https://officialsammy2701.github.io/bibleflash/screenshots/mobile-reflection.png" width="280" alt="Daily Quote Card"/>
+      <br/><sub>Reflection Card</sub>
+    </td>
   </tr>
 </table>
 
